@@ -1,0 +1,11 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: hug-config
+  cloud:
+    config:
+      server:
+        git:
+          uri:

@@ -22,8 +22,10 @@
     </properties>
 
     <modules>
+        <module>hug-common</module>
         <module>hug-eureka</module>
         <module>hug-gateway</module>
+        <module>hug-config</module>
     </modules>
 
     <dependencies>
