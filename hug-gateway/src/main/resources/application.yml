@@ -4,7 +4,35 @@ server:
 spring:
   application:
     name: hug-gateway
+  profiles:
+    active: path_route
+  cloud:
+    gateway:
+      #开启服务注册和发现的功能
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      #路由
+      routes:
+        - id: hug-demo-client
+          uri: lb://hug-demo-client
+          predicates:
+            - path=/demo/**
+          #在转发之前将/demo去掉
+          #filters:
+          #- StripPrefix=1
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8001/eureka/
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: path_route
+        uri: http://httpbin.org:80/get
+        predicates:
+        - Path=/foo/{segment}
+  profiles: path_route

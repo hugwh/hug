@@ -12,7 +12,7 @@
     <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-common</name>
-    <description>公共包</description>
+    <description>公共功能组件包</description>
 
     <dependencies>
         <dependency>
@@ -30,6 +30,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 
