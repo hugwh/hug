@@ -19,6 +19,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.hug.demo</groupId>
+            <artifactId>api</artifactId>
+            <version>${hug-common.version}</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
