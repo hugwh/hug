@@ -11,6 +11,7 @@
     <groupId>com</groupId>
     <artifactId>hug</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>hug</name>
     <packaging>pom</packaging>
     <description>hug cloud聚合模块</description>
@@ -21,6 +22,10 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <hug-common.version>0.0.1-SNAPSHOT</hug-common.version>
+        <hutool.version>4.5.1</hutool.version>
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <druid.version>1.0.26</druid.version>
+        <fastjson.version>1.2.7</fastjson.version>
     </properties>
 
     <modules>

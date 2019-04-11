@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.hug.demo</groupId>
             <artifactId>api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${hug-common.version}</version>
         </dependency>
 
     </dependencies>
