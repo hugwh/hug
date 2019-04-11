@@ -1,0 +1,4 @@
+JsonSchema:
+  path:
+    prefix: "/jsonSchema"
+    suffix: "_schema.json"
