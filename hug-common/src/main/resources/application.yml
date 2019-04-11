@@ -1,4 +1,13 @@
+
 JsonSchema:
   path:
     prefix: "/jsonSchema"
     suffix: "_schema.json"
+spring:
+  redis:
+    host: 120.79.197.55
+    database: 0
+    port: 6379
+    password:
+    #连接超时时间（毫秒）
+    timeout: 10000

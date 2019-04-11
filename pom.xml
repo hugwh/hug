@@ -12,7 +12,8 @@
     <artifactId>hug</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+    <description>hug cloud聚合模块</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +28,7 @@
         <module>hug-eureka</module>
         <module>hug-gateway</module>
         <module>hug-config</module>
+        <module>hug-demo</module>
     </modules>
 
     <dependencies>
@@ -45,6 +47,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+       <!-- <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>-->
     </dependencies>
 
     <build>
