@@ -11,13 +11,14 @@
     <groupId>com</groupId>
     <artifactId>hug</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
     <name>hug</name>
     <packaging>pom</packaging>
     <description>hug cloud聚合模块</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
@@ -67,7 +68,25 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <!-- 如果我们不告诉它我们的代码要使用什么样的jdk版本编译的话，它就会用maven-compiler-plugin默认的jdk版本来进行处理，
+            这样就容易出现版本不匹配，以至于可能导致编译不通过的问题 -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <target>${maven.compiler.target}</target>
+                    <source>${maven.compiler.source}</source>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <!--这是打成快照版本的配置，如果不用这个snapshotRepository标签，打包失败，会报权限问题 -->
+        <snapshotRepository>
+            <id>hug-snapshot</id>
+            <url>http://120.79.197.55:8081/repository/hug-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

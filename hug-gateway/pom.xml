@@ -14,10 +14,6 @@
     <name>hug-gateway</name>
     <description>gateway路由网关</description>
 
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

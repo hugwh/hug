@@ -53,18 +53,18 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.5</version>
         </dependency>
-        <!-- redis -->
+<!--        &lt;!&ndash; redis &ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
-        <!-- lettuce pool 缓存连接池 -->
+        &lt;!&ndash; lettuce pool 缓存连接池 &ndash;&gt;
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
             <version>2.5.0</version>
         </dependency>
-        <!-- Json -->
+        &lt;!&ndash; Json &ndash;&gt;
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
@@ -82,7 +82,7 @@
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
             <classifier>jdk15</classifier>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
