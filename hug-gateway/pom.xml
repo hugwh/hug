@@ -16,6 +16,19 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.hug</groupId>
+            <artifactId>common</artifactId>
+            <version>${hug-common.version}</version>
+            <!--与gateway的依赖版本冲突-->
+            <!--不剔除会抛异常 required a bean of type 'org.springframework.http.codec.ServerCodecConfigurer' that could not be found.-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
@@ -39,6 +52,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- lettuce pool 缓存连接池 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.5.0</version>
         </dependency>
     </dependencies>
 
