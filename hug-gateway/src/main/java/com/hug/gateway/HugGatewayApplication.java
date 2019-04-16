@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
-@ComponentScan(basePackages = {"org.springframework.http.codec"})
 @SpringCloudApplication
 public class HugGatewayApplication {
 

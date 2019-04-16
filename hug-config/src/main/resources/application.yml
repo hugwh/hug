@@ -1,5 +1,5 @@
 server:
-  port: 8006
+  port: 8888
 
 spring:
   application:
@@ -8,4 +8,11 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/hugwh/hug-config-remote.git
+          search-paths: '{application}'
+          username: hugwh
+          password: Hwh118122
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/

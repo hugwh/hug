@@ -29,22 +29,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 public class RedisCacheAutoConfiguration {
     @Bean
-
     public RedisTemplate<String, Serializable> redisCacheTemplate(LettuceConnectionFactory redisConnectionFactory) {
-
         RedisTemplate<String, Serializable> template = new RedisTemplate<>();
-
         //键的序列化方式
-
         template.setKeySerializer(new StringRedisSerializer());
-
         //值的序列化方式
-
         template.setValueSerializer(new GenericJackson2JsonRedisSerializer());
-
         template.setConnectionFactory(redisConnectionFactory);
-
         return template;
-
     }
 }
