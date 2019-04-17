@@ -34,7 +34,7 @@
         <module>hug-eureka</module>
         <module>hug-gateway</module>
         <module>hug-config</module>
-        <module>hug-demo</module>
+        <module>hug-modules</module>
     </modules>
 
     <dependencies>

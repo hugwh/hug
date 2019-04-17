@@ -1,0 +1,14 @@
+server:
+  port: 1002
+spring:
+  application:
+    name: hug-wechat-client
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: hug-config
+    profiles:
+      active: dev
