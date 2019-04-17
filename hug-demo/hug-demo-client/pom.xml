@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hug.demo</groupId>
-    <artifactId>client</artifactId>
+    <artifactId>hug-demo-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-demo-client</name>
     <description>微服务客户端</description>
@@ -37,8 +37,8 @@
 
         <dependency>
             <groupId>com.hug.demo</groupId>
-            <artifactId>api</artifactId>
-            <version>${hug-common.version}</version>
+            <artifactId>hug-demo-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.baomidou</groupId>

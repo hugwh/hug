@@ -9,7 +9,7 @@
         <!--<relativePath>../hug-common</relativePath> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
     </parent>
     <groupId>com.hug</groupId>
-    <artifactId>common</artifactId>
+    <artifactId>hug-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-common</name>
     <description>公共功能组件包</description>

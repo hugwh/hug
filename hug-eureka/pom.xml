@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hug</groupId>
-    <artifactId>eureka</artifactId>
+    <artifactId>hug-eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-eureka</name>
     <description>注册中心</description>

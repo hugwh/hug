@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hug.demo</groupId>
-    <artifactId>server</artifactId>
+    <artifactId>hug-demo-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-demo-server</name>
     <description>微服务服务端</description>
@@ -21,7 +21,7 @@
         </dependency>
         <dependency>
             <groupId>com.hug.demo</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>hug-demo-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!-- redis -->

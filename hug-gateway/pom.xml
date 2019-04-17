@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hug</groupId>
-    <artifactId>gateway</artifactId>
+    <artifactId>hug-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-gateway</name>
     <description>gateway路由网关</description>
@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.hug</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>hug-common</artifactId>
             <version>${hug-common.version}</version>
             <!--与gateway的依赖版本冲突-->
             <!--不剔除会抛异常 required a bean of type 'org.springframework.http.codec.ServerCodecConfigurer' that could not be found.-->

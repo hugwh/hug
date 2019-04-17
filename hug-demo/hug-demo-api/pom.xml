@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hug.demo</groupId>
-    <artifactId>api</artifactId>
+    <artifactId>hug-demo-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-demo-api</name>
     <description>demo api</description>
@@ -28,7 +28,7 @@
 
         <dependency>
             <groupId>com.hug</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>hug-common</artifactId>
             <version>${hug-common.version}</version>
         </dependency>
 
