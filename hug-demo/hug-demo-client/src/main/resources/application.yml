@@ -4,7 +4,6 @@ spring:
   application:
     name: hug-demo-client
   cloud:
-#    name: hug-config
     config:
 #      uri: http://localhost:8888
       profile: dev
@@ -12,7 +11,5 @@ spring:
       discovery:
         enabled: true
         service-id: hug-config
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8001/eureka/
+    profiles:
+      active: dev
