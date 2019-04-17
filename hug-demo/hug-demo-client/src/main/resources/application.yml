@@ -5,7 +5,6 @@ spring:
     name: hug-demo-client
   cloud:
     config:
-#      uri: http://localhost:8888
       profile: dev
       label: master
       discovery:
