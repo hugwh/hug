@@ -15,4 +15,6 @@ public interface UserService {
 
     @CacheEvict(key="'user_'+#id", value="users", condition="#id!=1")
     void deleteUser(String id);
+
+    User queryUser(String id);
 }

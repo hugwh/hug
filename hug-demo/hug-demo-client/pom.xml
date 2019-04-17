@@ -39,6 +39,12 @@
             <groupId>com.hug.demo</groupId>
             <artifactId>api</artifactId>
             <version>${hug-common.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.baomidou</groupId>
+                    <artifactId>mybatis-plus-boot-starter</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
     </dependencies>

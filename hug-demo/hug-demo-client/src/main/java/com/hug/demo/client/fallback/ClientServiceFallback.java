@@ -14,4 +14,9 @@ public class ClientServiceFallback implements ClientService {
     public String testFromClient(String name) {
         return "sorry "+name+",this service is unavailable";
     }
+
+    @Override
+    public String queryUser(String id) {
+        return "error";
+    }
 }

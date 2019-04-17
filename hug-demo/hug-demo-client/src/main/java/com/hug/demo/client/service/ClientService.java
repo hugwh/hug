@@ -3,6 +3,7 @@ package com.hug.demo.client.service;
 import com.hug.demo.client.fallback.ClientServiceFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -14,4 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface ClientService {
     @GetMapping(value="/test")
     String testFromClient(@RequestParam(value = "name") String name);
+
+    @GetMapping(value="/user/{id}")
+    String queryUser(@PathVariable(value = "id") String id);
 }

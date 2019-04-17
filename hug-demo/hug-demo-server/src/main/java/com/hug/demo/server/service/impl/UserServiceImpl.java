@@ -1,8 +1,10 @@
 package com.hug.demo.server.service.impl;
 
 import com.hug.demo.api.entity.User;
+import com.hug.demo.server.mapper.UserMapper;
 import com.hug.demo.server.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +15,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class UserServiceImpl implements UserService {
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public User getUser(String id) {
@@ -27,5 +31,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUser(String id) {
         System.out.println(id+"进入实现类删除数据！");
+    }
+
+    @Override
+    public User queryUser(String id) {
+        return userMapper.selectById(id);
     }
 }
