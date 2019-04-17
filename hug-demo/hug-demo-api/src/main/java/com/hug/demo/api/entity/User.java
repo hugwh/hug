@@ -1,11 +1,13 @@
 package com.hug.demo.api.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
 
 /**
  * @author: huangwh
@@ -16,13 +18,13 @@ import java.io.Serializable;
 @Builder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+@TableName(value = "t_user")
+public class User extends Model {
+    @TableId("id")
     private String id;
-
+    @TableField("name")
     private String name;
-
+    @TableField("age")
     private int age;
 
 }

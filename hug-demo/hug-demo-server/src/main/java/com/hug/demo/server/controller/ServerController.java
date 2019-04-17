@@ -1,6 +1,7 @@
 package com.hug.demo.server.controller;
 
 import com.hug.demo.api.entity.User;
+import com.hug.demo.server.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,6 +19,9 @@ import java.util.Map;
  */
 @RestController
 public class ServerController {
+    @Autowired
+    private UserMapper userMapper;
+
     @Value("${server.port}")
     String port;
 
