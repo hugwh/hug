@@ -1,0 +1,14 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: hug-demo-client
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: hug-config
+    profiles:
+      active: dev

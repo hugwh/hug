@@ -14,6 +14,7 @@
     <description>微服务聚合模块</description>
 
     <modules>
+        <module>hug-demo</module>
         <module>hug-wechat</module>
     </modules>
 </project>
