@@ -9,6 +9,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 返回结果
  * @author: huangwh
  * @mail huangwh@txtws.com
  * @date: 2019-04-11 11:07
