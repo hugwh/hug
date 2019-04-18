@@ -1,6 +1,9 @@
 package com.hug.wechat.server.service.impl;
 
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSONUtil;
 import com.hug.common.dto.Result;
 import com.hug.wechat.server.service.DialogueService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,7 +27,6 @@ public class DialogueServiceImpl implements DialogueService {
         String url = String.format("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s",
                 appId, secret);
         String re = HttpUtil.get(url);
-        log.debug(re);
-        return new Result().successResult(re);
+        return new Result().successResult(JSONUtil.parseObj(re));
     }
 }

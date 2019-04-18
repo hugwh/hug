@@ -1,4 +1,4 @@
-package com.hug.wechat.client.Controller;
+package com.hug.wechat.client.controller;
 
 import com.hug.wechat.client.service.ServiceFeign;
 import org.springframework.beans.factory.annotation.Autowired;
