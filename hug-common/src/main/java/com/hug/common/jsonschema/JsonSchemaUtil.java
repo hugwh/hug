@@ -56,7 +56,7 @@ public class JsonSchemaUtil {
         report = JsonSchemaFactory.byDefault().getValidator().validateUnchecked(schemaNode, jsonNode);
         if (report.isSuccess()) {
             // 校验成功
-            result.setStatus(EnumResult.SUCESS.getStatus());
+            result.setCode(EnumResult.SUCESS.getStatus());
             result.setMessage(EnumResult.SUCESS.getMessage());
             return result;
         } else {

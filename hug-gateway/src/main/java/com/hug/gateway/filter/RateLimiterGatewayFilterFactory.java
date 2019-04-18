@@ -66,7 +66,7 @@ public class RateLimiterGatewayFilterFactory extends AbstractGatewayFilterFactor
                         }
                         ServerHttpResponse rs = exchange.getResponse();
                         Result data = new Result();
-                        data.setStatus(101);
+                        data.setCode(101);
                         data.setMessage("访问过快");
                         byte[] datas = JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
                         DataBuffer buffer = rs.bufferFactory().wrap(datas);

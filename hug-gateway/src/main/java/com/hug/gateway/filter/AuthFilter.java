@@ -33,7 +33,7 @@ public class AuthFilter implements GlobalFilter {
         }
         ServerHttpResponse response = exchange.getResponse();
         Result data = new Result();
-        data.setStatus(401);
+        data.setCode(401);
         data.setMessage("非法请求");
         byte[] datas = JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
         DataBuffer buffer = response.bufferFactory().wrap(datas);

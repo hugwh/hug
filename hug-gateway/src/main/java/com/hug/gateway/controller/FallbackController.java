@@ -16,7 +16,7 @@ public class FallbackController {
     @GetMapping("/fallback")
     public Result fallback() {
         Result response = new Result();
-        response.setStatus(100);
+        response.setCode(100);
         response.setMessage("服务暂时不可用");
         return response;
     }

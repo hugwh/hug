@@ -8,15 +8,15 @@ package com.hug.common.exception;
  * @date: 2019-04-02 16:29
  */
 public class BusinessException extends RuntimeException {
-    private Integer status;
+    private Integer code;
 
     public BusinessException() {
         super();
     }
 
-    public BusinessException(Integer status, String message) {
+    public BusinessException(Integer code, String message) {
         super(message);
-        this.status = status;
+        this.code = code;
     }
 
     public BusinessException(String message) {
@@ -33,11 +33,11 @@ public class BusinessException extends RuntimeException {
         super(cause);
     }
 
-    public Integer getStatus() {
-        return status;
+    public Integer getCode() {
+        return code;
     }
 
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setCode(Integer code) {
+        this.code = code;
     }
 }

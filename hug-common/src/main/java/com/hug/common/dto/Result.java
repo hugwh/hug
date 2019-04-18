@@ -15,7 +15,7 @@ import java.io.Serializable;
  */
 @Data
 public class Result<T> implements Serializable {
-    private Integer status;
+    private Integer code;
     private String message;
     private T data;
 
@@ -27,7 +27,7 @@ public class Result<T> implements Serializable {
         Result result = new Result();
         if (r != null && r != "") {
             JSONObject rj = JsonUtils.string2Json(r);
-            result.setStatus(rj.getInteger("status"));
+            result.setCode(rj.getInteger("code"));
             result.setMessage(rj.getString("message"));
             if (rj.get("data") != null) {
                 Object data = rj.get("data");
@@ -39,19 +39,19 @@ public class Result<T> implements Serializable {
 
     public Result() {}
 
-    public Result(Integer status, String message) {
-        this.status = status;
+    public Result(Integer code, String message) {
+        this.code = code;
         this.message = message;
     }
 
-    public Result(Integer status, String message, T data) {
-        this.status = status;
+    public Result(Integer code, String message, T data) {
+        this.code = code;
         this.message = message;
         this.data = data;
     }
 
     public Result successResult(T data) {
-        this.status = EnumResult.SUCESS.getStatus();
+        this.code = EnumResult.SUCESS.getStatus();
         this.message = EnumResult.SUCESS.getMessage();
         this.data = data;
 
@@ -59,7 +59,7 @@ public class Result<T> implements Serializable {
     }
 
     public Result successResult() {
-        this.status = EnumResult.SUCESS.getStatus();
+        this.code = EnumResult.SUCESS.getStatus();
         this.message = EnumResult.SUCESS.getMessage();
 
         return this;
