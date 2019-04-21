@@ -12,6 +12,7 @@
     <artifactId>hug-config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-config</name>
+    <packaging>jar</packaging>
     <description>分布式配置中心</description>
 
     <properties>

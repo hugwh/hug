@@ -12,6 +12,7 @@
     <artifactId>hug-demo-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-demo-client</name>
+    <packaging>jar</packaging>
     <description>微服务客户端</description>
 
     <dependencies>

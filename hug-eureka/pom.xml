@@ -12,6 +12,7 @@
     <artifactId>hug-eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-eureka</name>
+    <packaging>jar</packaging>
     <description>注册中心</description>
 
     <properties>
