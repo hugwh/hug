@@ -76,6 +76,6 @@ public class ServerController {
     @GetMapping(value = "/user/{id}")
     @ResponseBody
     public User queryUser(@PathVariable(value = "id") String id) {
-        return userService.queryUser(id);
+        return userService.getUser(id);
     }
 }

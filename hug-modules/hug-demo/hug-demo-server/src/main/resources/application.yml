@@ -12,6 +12,10 @@ spring:
         service-id: hug-config
     profiles:
       active: dev
+    bus:
+      enabled: true
+      trace:
+        enabled: true
   redis:
     host: 120.79.197.55
     password:
@@ -71,3 +75,11 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+test:
+  bus:
+    name: abc
