@@ -12,6 +12,7 @@
     <artifactId>hug-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-gateway</name>
+    <packaging>jar</packaging>
     <description>gateway路由网关</description>
 
     <dependencies>

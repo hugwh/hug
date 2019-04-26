@@ -12,6 +12,7 @@
     <artifactId>hug-wechat-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-wechat-server</name>
+    <packaging>jar</packaging>
     <description>微服务服务端</description>
 
     <dependencies>

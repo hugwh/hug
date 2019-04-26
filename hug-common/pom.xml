@@ -12,6 +12,7 @@
     <artifactId>hug-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-common</name>
+    <packaging>jar</packaging>
     <description>公共功能组件包</description>
 
     <dependencies>

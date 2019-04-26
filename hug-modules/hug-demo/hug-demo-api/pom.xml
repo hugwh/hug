@@ -12,6 +12,7 @@
     <artifactId>hug-demo-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hug-demo-api</name>
+    <packaging>jar</packaging>
     <description>demo api</description>
 
     <dependencies>
