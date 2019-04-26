@@ -1,0 +1,43 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: hug-zipkin
+  main:
+    allow-bean-definition-overriding: true
+  rabbitmq:
+    host: 120.79.197.55
+    port: 5672
+    username: guest
+    password: guest
+    listener: # 这里配置了重试策略
+      direct:
+        retry:
+          enabled: true
+      simple:
+        retry:
+          enabled: true
+  datasource:
+    url: jdbc:mysql://120.79.197.55:3306/hug-zipkin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: P@ssw0rd
+    # 初始连接数
+    initial-size: 10
+    # 最大连接池数量
+    max-active: 100
+    # 最小连接池数量
+    min-idle: 10
+    # 配置获取连接等待超时的时间
+    max-wait: 60000
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+zipkin:
+  storage:
+    type: mysql

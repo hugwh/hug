@@ -33,6 +33,13 @@ spring:
     port: 5672
     username: guest
     password: guest
+    listener: # 这里配置了重试策略
+      direct:
+        retry:
+          enabled: true
+      simple:
+        retry:
+          enabled: true
   datasource:
     url: jdbc:mysql://120.79.197.55:3306/test?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
@@ -45,6 +52,18 @@ spring:
     min-idle: 10
     # 配置获取连接等待超时的时间
     max-wait: 60000
+  zipkin:
+    base-url: http://localhost:8088
+    enabled: true
+    #发送方式，没有默认值，一定要配置
+    sender:
+      type: web
+  #    sender:
+#      type: rabbit
+  sleuth:
+    sampler:
+      #收集追踪信息的比率，如果是0.1则表示只记录10%的追踪数据，如果要全部追踪，设置为1（实际场景不推荐，因为会造成不小的性能消耗）
+      probability: 1
 #mybatis plus
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
