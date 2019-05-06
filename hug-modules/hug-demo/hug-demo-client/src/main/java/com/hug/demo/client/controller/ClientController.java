@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class ClientController {
     @Autowired
     private ClientService clientService;
-    @Value("${test.value}")
-    private String value;
 
     @GetMapping("/test")
     public String tset(@RequestParam String name) {

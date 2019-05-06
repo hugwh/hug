@@ -12,3 +12,7 @@ spring:
         service-id: hug-config
     profiles:
       active: dev
+#开启swagger服务
+swagger:
+  enable: true
+  basePackage: "com.hug.wechat.client"
