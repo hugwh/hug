@@ -16,5 +16,6 @@
     <modules>
         <module>hug-demo</module>
         <module>hug-wechat</module>
+        <module>hug-socket</module>
     </modules>
 </project>

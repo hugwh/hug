@@ -18,7 +18,7 @@ spring:
         retry:
           enabled: true
   datasource:
-    url: jdbc:mysql://120.79.197.55:3306/hug-zipkin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://120.79.197.55:3306/hug_zipkin?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: P@ssw0rd
     # 初始连接数

@@ -10,5 +10,5 @@ spring:
       discovery:
         enabled: true
         service-id: hug-config
-    profiles:
-      active: dev
+  profiles:
+    active: dev
