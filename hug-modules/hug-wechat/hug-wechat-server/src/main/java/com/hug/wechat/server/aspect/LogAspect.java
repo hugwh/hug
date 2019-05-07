@@ -1,4 +1,4 @@
-package com.hug.common.aspect;
+package com.hug.wechat.server.aspect;
 
 import com.hug.common.dto.Result;
 import com.hug.common.exception.BusinessException;
@@ -26,7 +26,7 @@ import java.util.Arrays;
 public class LogAspect {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Pointcut("@annotation(com.hug.common.annotation.Log)")
+    @Pointcut("@annotation(com.hug.wechat.server.annotation.Log)")
     public void exPointCut() {}
 
     @Before("exPointCut()")

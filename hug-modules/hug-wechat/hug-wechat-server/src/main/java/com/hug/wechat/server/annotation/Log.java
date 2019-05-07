@@ -1,4 +1,4 @@
-package com.hug.common.annotation;
+package com.hug.wechat.server.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

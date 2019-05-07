@@ -1,9 +1,9 @@
-package com.hug.common.aspect;
+package com.hug.wechat.server.aspect;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hug.common.annotation.JsonSchemaValidate;
 import com.hug.common.constant.Constants;
 import com.hug.common.jsonschema.JsonSchemaUtil;
+import com.hug.wechat.server.annotation.JsonSchemaValidate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ValidateInterceptor {
 
-    @Pointcut("@annotation(com.hug.common.annotation.JsonSchemaValidate)")
+    @Pointcut("@annotation(com.hug.wechat.server.annotation.JsonSchemaValidate)")
     public void exPointCut() {}
 
     @Before("exPointCut() && @annotation(validateParams)")

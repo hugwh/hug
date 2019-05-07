@@ -1,7 +1,5 @@
 package com.hug.common.constant.enums;
 
-import lombok.Data;
-
 /**
  * @author: huangwh
  * @mail huangwh@txtws.com

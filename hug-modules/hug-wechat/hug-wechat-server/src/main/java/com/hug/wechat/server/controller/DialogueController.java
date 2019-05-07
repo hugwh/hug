@@ -1,7 +1,7 @@
 package com.hug.wechat.server.controller;
 
-import com.hug.common.annotation.Log;
 import com.hug.common.dto.Result;
+import com.hug.wechat.server.annotation.Log;
 import com.hug.wechat.server.service.DialogueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
