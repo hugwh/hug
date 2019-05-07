@@ -1,9 +1,73 @@
 server:
   port: 8888
-
 spring:
   application:
     name: hug-config
+  profiles:
+    active: test
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hugwh/hug-config-remote.git
+          search-paths: '{application}'
+          username: hugwh
+          password: Hwh118122
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    #spring cloud bus 刷新配置
+  rabbitmq:
+    host: 120.79.197.55
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hugwh/hug-config-remote.git
+          search-paths: '{application}'
+          username: hugwh
+          password: Hwh118122
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+    #spring cloud bus 刷新配置
+  rabbitmq:
+    host: 120.79.197.55
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+---
+spring:
+  profiles: prod
   cloud:
     config:
       server:
