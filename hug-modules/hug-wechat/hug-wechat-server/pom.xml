@@ -17,10 +17,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.hug.wechat</groupId>
             <artifactId>hug-wechat-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
