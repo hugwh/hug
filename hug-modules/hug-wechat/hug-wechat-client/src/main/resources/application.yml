@@ -16,3 +16,12 @@ spring:
 swagger:
   enable: true
   basePackage: "com.hug.wechat.client"
+management:
+  #spring boot admin监控配置
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

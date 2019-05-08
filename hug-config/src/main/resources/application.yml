@@ -27,10 +27,14 @@ spring:
     username: guest
     password: guest
 management:
+  #spring boot admin监控配置
   endpoints:
     web:
       exposure:
-        include: bus-refresh
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 eureka:
   client:
     service-url:
