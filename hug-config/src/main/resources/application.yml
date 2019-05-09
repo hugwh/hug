@@ -4,7 +4,7 @@ spring:
   application:
     name: hug-config
   profiles:
-    active: test
+    active: dev
 ---
 spring:
   profiles: dev

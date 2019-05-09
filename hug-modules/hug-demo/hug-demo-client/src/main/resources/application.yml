@@ -44,7 +44,6 @@ swagger:
   enable: true
   basePackage: "com.hug.demo.client"
 management:
-  #spring boot admin监控配置
   endpoints:
     web:
       exposure:
