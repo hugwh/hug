@@ -1,7 +1,8 @@
 package com.hug.gateway.filter;
 
 import com.alibaba.fastjson.JSON;
-import com.hug.common.dto.Result;
+import com.hug.common.constant.ResultConstants;
+import com.hug.common.model.dto.ResultDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -15,7 +16,7 @@ import reactor.core.publisher.Mono;
 import java.nio.charset.StandardCharsets;
 
 /**
- * 验证过滤器
+ * 签名验证 全局过滤器
  *
  * @author: huangwh
  * @mail huangwh@txtws.com
@@ -23,22 +24,28 @@ import java.nio.charset.StandardCharsets;
  */
 @Slf4j
 @Component
-public class AuthFilter implements GlobalFilter {
+public class SignatureAuthFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("进入认证");
-        String token = exchange.getRequest().getHeaders().getFirst("token");
-        if ("token".equals(token)) {
+        log.info("进入签名验证过滤器");
+        String appId = exchange.getRequest().getHeaders().getFirst("appId");
+        String signature = exchange.getRequest().getHeaders().getFirst("signature");
+        exchange.getRequest().getBody();
+        exchange.getFormData();
+        if (true) {
             return chain.filter(exchange);
         }
+
+        ResultDto result = new ResultDto();
+        result.setCode(ResultConstants.CODE_AUTH_ERR);
+        result.setMsg("签名验证失败");
+
         ServerHttpResponse response = exchange.getResponse();
-        Result data = new Result();
-        data.setCode(401);
-        data.setMessage("非法请求");
-        byte[] datas = JSON.toJSONString(data).getBytes(StandardCharsets.UTF_8);
+        byte[] datas = JSON.toJSONString(result).getBytes(StandardCharsets.UTF_8);
         DataBuffer buffer = response.bufferFactory().wrap(datas);
         response.setStatusCode(HttpStatus.UNAUTHORIZED);
         response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");
+
         return response.writeWith(Mono.just(buffer));
     }
 }
