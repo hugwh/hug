@@ -12,11 +12,11 @@ import com.hug.common.constant.ResultConstants;
  */
 public class ResultCode {
 
-    public static String build(String serverCode, String toCode, String errCode) {
+    public static String build(String serverCode, String typeCode, String errCode) {
         return new StringBuffer()
                 .append(serverCode.toUpperCase())
                 .append(ResultConstants.SPLIT_STR)
-                .append(toCode)
+                .append(typeCode)
                 .append(ResultConstants.SPLIT_STR)
                 .append(errCode)
                 .toString();

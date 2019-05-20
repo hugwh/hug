@@ -1,6 +1,9 @@
 package com.hug.gateway.controller;
 
+import com.hug.common.constant.ResultConstants;
 import com.hug.common.dto.Result;
+import com.hug.common.exception.ClientException;
+import com.hug.common.model.dto.ResultDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,10 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FallbackController {
     @GetMapping("/fallback")
-    public Result fallback() {
-        Result response = new Result();
-        response.setCode(100);
-        response.setMessage("服务暂时不可用");
-        return response;
+    public void fallback() {
+        throw new ClientException(ResultConstants.TYPE_UNVARNISHED_TRANSMISSION, "连接异常");
     }
 }

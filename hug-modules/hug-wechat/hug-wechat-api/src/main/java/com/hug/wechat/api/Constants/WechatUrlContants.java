@@ -1,4 +1,4 @@
-package com.hug.common.constant;
+package com.hug.wechat.api.Constants;
 
 /**
  * 微信接口url

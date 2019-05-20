@@ -1,6 +1,6 @@
-package com.hug.wechat.api.dto;
+package com.hug.wechat.api.vo;
 
-import com.hug.common.dto.BaseEntity;
+import com.hug.common.model.vo.BaseVO;
 import lombok.*;
 
 /**
@@ -14,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class WechatAuth extends BaseEntity {
+public class WechatAuthVO extends BaseVO {
     private String signature;
     private String timestamp;
     private String nonce;

@@ -1,4 +1,4 @@
-package com.hug.wechat.api.dto;
+package com.hug.wechat.api.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Builder(toBuilder = true)
 @AllArgsConstructor
-public class ReqToken {
+public class ReqTokenVO {
     private String grant_type;
     private String appid;
     private String secret;

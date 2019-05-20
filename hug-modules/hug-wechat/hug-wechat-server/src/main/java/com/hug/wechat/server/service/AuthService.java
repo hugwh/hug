@@ -1,6 +1,6 @@
 package com.hug.wechat.server.service;
 
-import com.hug.wechat.api.dto.WechatAuth;
+import com.hug.wechat.api.vo.WechatAuthVO;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -14,5 +14,5 @@ import java.io.IOException;
  */
 public interface AuthService {
 
-    void authServer(HttpServletResponse response, WechatAuth wechatAuth) throws IOException;
+    void authServer(HttpServletResponse response, WechatAuthVO wechatAuthVO) throws IOException;
 }

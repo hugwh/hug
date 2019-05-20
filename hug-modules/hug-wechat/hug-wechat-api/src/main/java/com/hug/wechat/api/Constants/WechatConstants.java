@@ -7,6 +7,6 @@ package com.hug.wechat.api.Constants;
  * @mail huangwh@txtws.com
  * @date: 2019-05-20 18:34
  */
-public class Constants {
+public class WechatConstants {
     public static final String SERVER_CODE = "WCHT";
 }

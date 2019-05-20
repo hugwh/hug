@@ -3,6 +3,8 @@ package com.hug.wechat.server.handler;
 import com.hug.common.constant.ResultConstants;
 import com.hug.common.exception.ResultException;
 import com.hug.common.model.dto.ResultDto;
+import com.hug.common.util.sys.ResultCode;
+import com.hug.wechat.api.Constants.WechatConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -19,9 +21,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 public class ResultExceptionHandler {
 
-    @ExceptionHandler(ResultException.class)
+    @ExceptionHandler({ResultException.class})
     @ResponseBody
     public ResultDto handlerResultException(ResultException ex) {
-        return new ResultDto(ResultConstants.STATUS_ERR, ex.getCode(), ex.getMsg(), null);
+        String code = ResultCode.build(WechatConstants.SERVER_CODE, ex.getType(), ex.getCode());
+        return new ResultDto(ResultConstants.STATUS_ERR, code, ex.getMsg(), null);
     }
 }

@@ -1,6 +1,8 @@
 package com.hug.common.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.hug.common.constant.ResultConstants;
+import com.hug.common.constant.enums.ResultDtoEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,4 +25,10 @@ public class ResultDto<T> {
     private String code;
     private String msg;
     private T data;
+
+    public ResultDto(T data){
+        this.status = ResultDtoEnum.OK.getStatus();
+        this.msg = ResultDtoEnum.OK.getMsg();
+        this.data = data;
+    }
 }

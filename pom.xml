@@ -42,6 +42,7 @@
         <module>hug-config</module>
         <module>hug-zipkin</module>
         <module>hug-modules</module>
+        <module>hug-boot-admin</module>
     </modules>
 
     <dependencies>

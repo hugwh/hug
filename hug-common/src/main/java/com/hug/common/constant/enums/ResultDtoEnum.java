@@ -10,7 +10,7 @@ import com.hug.common.constant.ResultConstants;
  * @date: 2019-05-20 18:19
  */
 public enum ResultDtoEnum {
-    OK(ResultConstants.STATUS_OK, "ok"),
+    OK(ResultConstants.STATUS_OK, ResultConstants.STATUS_MSG_OK),
     ;
     private Integer status;
     private String msg;

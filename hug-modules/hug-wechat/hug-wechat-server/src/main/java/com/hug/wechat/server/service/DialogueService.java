@@ -1,6 +1,6 @@
 package com.hug.wechat.server.service;
 
-import com.hug.common.dto.Result;
+import com.hug.common.model.dto.ResultDto;
 
 /**
  * 对话服务 service
@@ -10,5 +10,5 @@ import com.hug.common.dto.Result;
  * @date: 2019-04-18 14:54
  */
 public interface DialogueService {
-    Result getAccessToken();
+    ResultDto getAccessToken();
 }

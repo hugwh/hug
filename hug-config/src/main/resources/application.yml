@@ -26,15 +26,15 @@ spring:
     port: 5672
     username: guest
     password: guest
-management:
-  #spring boot admin监控配置
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: ALWAYS
+#management:
+#  #spring boot admin监控配置
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#  endpoint:
+#    health:
+#      show-details: ALWAYS
 eureka:
   client:
     service-url:

@@ -1,6 +1,6 @@
 package com.hug.wechat.server.controller;
 
-import com.hug.wechat.api.dto.WechatAuth;
+import com.hug.wechat.api.vo.WechatAuthVO;
 import com.hug.wechat.server.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ public class AuthController {
                            @RequestParam(value = "nonce") String nonce,
                            @RequestParam(value = "echostr") String echostr)
             throws IOException {
-        WechatAuth wechatAuth = new WechatAuth(signature, timestamp, nonce, echostr);
-        authService.authServer(response, wechatAuth);
+        WechatAuthVO wechatAuthVO = new WechatAuthVO(signature, timestamp, nonce, echostr);
+        authService.authServer(response, wechatAuthVO);
     }
 }
