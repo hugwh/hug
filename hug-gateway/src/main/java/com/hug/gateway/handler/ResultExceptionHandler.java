@@ -1,10 +1,9 @@
 package com.hug.gateway.handler;
 
-import com.hug.common.constant.ResultConstants;
+import com.hug.common.constant.enums.result.CodeEnum;
+import com.hug.common.constant.enums.result.ServiceEnum;
 import com.hug.common.exception.ResultException;
-import com.hug.common.model.dto.ResultDto;
-import com.hug.common.util.sys.ResultCode;
-import com.hug.gateway.constants.GateWayConstants;
+import com.hug.common.model.dto.ResultBaseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,8 +22,13 @@ public class ResultExceptionHandler {
 
     @ExceptionHandler({ResultException.class})
     @ResponseBody
-    public ResultDto handlerResultException(ResultException ex) {
-        String code = ResultCode.build(GateWayConstants.SERVER_CODE, ex.getType(), ex.getCode());
-        return new ResultDto(ResultConstants.STATUS_ERR, code, ex.getMsg(), null);
+    public ResultBaseDto handlerResultException(ResultException ex) {
+        return new ResultBaseDto(ex.getCode(), ex.getMsg(), ex.getFrom());
+    }
+
+    @ExceptionHandler({Exception.class})
+    @ResponseBody
+    public ResultBaseDto handlerException(ResultException ex) {
+        return new ResultBaseDto(CodeEnum.SYS_ERR, ex.getMsg(), ServiceEnum.HUG_GATEWAY);
     }
 }

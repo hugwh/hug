@@ -2,11 +2,15 @@ package com.hug.gateway.filter;
 
 import com.alibaba.fastjson.JSON;
 import com.hug.common.constant.ResultConstants;
+import com.hug.common.constant.enums.result.CodeEnum;
+import com.hug.common.constant.enums.result.ServiceEnum;
+import com.hug.common.model.dto.ResultBaseDto;
 import com.hug.common.model.dto.ResultDto;
 import io.netty.buffer.ByteBufAllocator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.core.annotation.Order;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.core.io.buffer.NettyDataBufferFactory;
@@ -21,10 +25,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
-import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * 签名验证 全局过滤器
@@ -35,6 +36,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 @Slf4j
 @Component
+@Order(0)
 public class SignatureAuthFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
@@ -74,12 +76,10 @@ public class SignatureAuthFilter implements GlobalFilter {
             return chain.filter(exchange.mutate().request(request).build());
         }
 
-        ResultDto result = new ResultDto();
-        result.setCode(ResultConstants.CODE_AUTH_ERR);
-        result.setMsg("签名验证失败");
+        ResultBaseDto resultBaseDto = new ResultBaseDto(CodeEnum.AUTH_ERR, "签名验证失败", ServiceEnum.HUG_GATEWAY);
 
         ServerHttpResponse response = exchange.getResponse();
-        byte[] datas = JSON.toJSONString(result).getBytes(StandardCharsets.UTF_8);
+        byte[] datas = JSON.toJSONString(resultBaseDto).getBytes(StandardCharsets.UTF_8);
         DataBuffer buffer = response.bufferFactory().wrap(datas);
         response.setStatusCode(HttpStatus.UNAUTHORIZED);
         response.getHeaders().add("Content-Type", "application/json;charset=UTF-8");

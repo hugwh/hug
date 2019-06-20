@@ -1,6 +1,7 @@
 package com.hug.gateway.controller;
 
-import com.hug.common.constant.ResultConstants;
+import com.hug.common.constant.enums.result.DisplayEnum;
+import com.hug.common.constant.enums.result.ServiceEnum;
 import com.hug.common.exception.ClientException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class GatewayController {
     @GetMapping("/fallback")
     public void fallback() {
-        throw new ClientException(ResultConstants.TYPE_UNVARNISHED_TRANSMISSION, "服务连接异常");
+        throw new ClientException("网关服务降级", ServiceEnum.HUG_GATEWAY, DisplayEnum.NONE);
     }
 }

@@ -1,5 +1,8 @@
 package com.hug.common.exception;
 
+import com.hug.common.constant.enums.result.CodeEnum;
+import com.hug.common.constant.enums.result.DisplayEnum;
+import com.hug.common.constant.enums.result.ServiceEnum;
 import lombok.Data;
 
 /**
@@ -13,20 +16,25 @@ public class ResultException extends RuntimeException {
     /**
      * 错误码
      */
-    private String code;
-    /**
-     * 展示类型 透传 or 提醒
-     */
-    private String type;
+    private CodeEnum code;
     /**
      * 信息
      */
     private String msg;
+    /**
+     * 响应服务标识
+     */
+    private ServiceEnum from;
 
-    public ResultException(String code, String type, String msg) {
-        super(msg);
-        this.code = code;
-        this.type = type;
+    /**
+     * 展示类型 透传 or 提醒
+     */
+    private int display;
+
+    public ResultException(CodeEnum codeEnum, String msg, ServiceEnum serviceEnum,  DisplayEnum displayEnum) {
+        this.code = codeEnum;
         this.msg = msg;
+        this.from = serviceEnum;
+        this.display = displayEnum.getValue();
     }
 }

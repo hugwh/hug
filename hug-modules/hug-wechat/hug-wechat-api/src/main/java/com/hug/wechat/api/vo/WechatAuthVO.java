@@ -1,7 +1,8 @@
 package com.hug.wechat.api.vo;
 
-import com.hug.common.model.vo.BaseVO;
 import lombok.*;
+
+import java.io.Serializable;
 
 /**
  * @author: huangwh
@@ -14,7 +15,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class WechatAuthVO extends BaseVO {
+public class WechatAuthVO implements Serializable {
     private String signature;
     private String timestamp;
     private String nonce;
