@@ -1,6 +1,8 @@
 package com.hug.common.exception;
 
-import com.hug.common.constant.ResultConstants;
+import com.hug.common.constant.enums.result.CodeEnum;
+import com.hug.common.constant.enums.result.DisplayEnum;
+import com.hug.common.constant.enums.result.ServiceEnum;
 
 /**
  * 认证异常
@@ -9,7 +11,11 @@ import com.hug.common.constant.ResultConstants;
  */
 public class AuthException extends ResultException {
 
-    public AuthException(String type, String msg) {
-        super(ResultConstants.CODE_AUTH_ERR, type, msg);
+    public AuthException(String msg, ServiceEnum serviceEnum, DisplayEnum displayEnum) {
+        super(CodeEnum.AUTH_ERR, msg, serviceEnum, displayEnum);
+    }
+
+    public AuthException(CodeEnum codeEnum, String msg, ServiceEnum serviceEnum, DisplayEnum displayEnum) {
+        super(codeEnum, msg, serviceEnum, displayEnum);
     }
 }
