@@ -36,7 +36,6 @@ import java.nio.charset.StandardCharsets;
  */
 @Slf4j
 @Component
-@Order(0)
 public class SignatureAuthFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

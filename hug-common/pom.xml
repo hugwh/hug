@@ -64,6 +64,13 @@
             <artifactId>hutool-all</artifactId>
             <version>4.5.6</version>
         </dependency>
+
+        <!--排除内置tomcat-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>

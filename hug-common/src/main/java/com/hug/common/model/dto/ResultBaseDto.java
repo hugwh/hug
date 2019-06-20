@@ -17,11 +17,12 @@ import lombok.NoArgsConstructor;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @AllArgsConstructor
-@NoArgsConstructor
 public class ResultBaseDto {
     private Integer code;
     private String msg;
     private ServiceEnum from;
+
+    public ResultBaseDto(){}
 
     public ResultBaseDto(CodeEnum codeEnum, String msg, ServiceEnum serviceEnum) {
         this.code = codeEnum.getCode();
