@@ -5,7 +5,6 @@ import com.hug.common.constant.enums.result.CodeEnum;
 import com.hug.common.constant.enums.result.ServiceEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * 返回结果基础类
